@@ -3,7 +3,7 @@ import './App.css';
 import Links from "./components/Links";
 import Display from "./components/display/Display";
 
-export default function Layout(){
+export default function Layout({component}){
     return (
         <div id='appLayout'>
             <div id="navContainer">
@@ -15,7 +15,7 @@ export default function Layout(){
             </div>
             </div>
             <div id="mainDisplay">
-                <Display/>
+                <Display component={component}/>
             </div>
             <div id="playbackController">
                 {/* <PlaybackControls/> */}

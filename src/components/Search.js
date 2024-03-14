@@ -1,7 +1,15 @@
 import React from "react";
+import Layout from "../Layout";
 
 export default function Search(){
+    const search = (
+        <div>
+            <h1>hello from search</h1>
+        </div>
+    )
+
+
     return (
-        <h1>hello from Search</h1>
+        <Layout component={search}/>
     )
 }
