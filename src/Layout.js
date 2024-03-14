@@ -1,6 +1,7 @@
 import React from "react";
 import './App.css';
 import Links from "./components/Links";
+import Display from "./components/display/Display";
 
 export default function Layout(){
     return (
@@ -14,7 +15,7 @@ export default function Layout(){
             </div>
             </div>
             <div id="mainDisplay">
-                {/* <Display/> */}
+                <Display/>
             </div>
             <div id="playbackController">
                 {/* <PlaybackControls/> */}
