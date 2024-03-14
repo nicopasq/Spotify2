@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
-import Links from "./components/Links";
 import Display from "./components/display/Display";
+import Links from "./components/navigation/Links";
 
 export default function Layout({component}){
     return (
