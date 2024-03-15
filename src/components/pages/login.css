@@ -1,9 +1,19 @@
 #loginPage{
     background-color: white;
+    text-align: center;
     z-index: 999999999999999;
     height: 100vh;
     width: 100vw;
     z-index: 99999999;
     position: absolute;
     top: 0;
+}
+#loginBtn{
+    background-color: green;
+    color: white;
+    height: 10vh;
+    width: 15vw;
+    font-size: 20px;
+    position: relative;
+    top: 35%;
 }
