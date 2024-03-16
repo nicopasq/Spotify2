@@ -5,8 +5,14 @@ import Layout from './Layout';
 import Login from './components/pages/Login';
 import Profile from './components/pages/Profile';
 import Search from './components/pages/Search';
+import { useEffect } from 'react';
 
 function App() {
+
+  useEffect(() => {
+    fetch('http://localhost:3001')
+    .then(r => console.log(r))
+  }, [])
 
   return (
     <div id='app'> 
