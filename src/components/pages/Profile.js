@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Layout from "../../Layout";
 
 export default function Profile(){
     const tokenData = useSelector(state => state.tokenData.value)
-    // const tokenData = {...token}
 
     const [profileData, setProfileData] = useState({
         display_name:'',
@@ -27,7 +26,7 @@ export default function Profile(){
         .then(r => r.json())
         .then(data => setProfileData(data))
     }
-    
+
     const profileComponent = (
         <div>
         <h2>{profileData.display_name} | Followers: {profileData.followers.total}</h2>

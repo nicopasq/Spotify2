@@ -1,3 +1,22 @@
+# Spotify 2
+
+## Installation
+### Frontend
+ - npm install
+### Backend
+ - npm install --prefix server 
+
+## Run App
+### Node.js Backend
+ 1. cd server
+ 2. node server.mjs
+### React.js Frontend
+ 1. npm start
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
