@@ -14,8 +14,6 @@ export default function Profile() {
     product: "",
   });
 
-  console.log(profileData);
-
   useEffect(() => {
     if (tokenData?.access_token) {
       const { access_token } = tokenData;
