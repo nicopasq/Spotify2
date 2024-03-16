@@ -5,7 +5,7 @@ import Login from './components/pages/Login';
 import Profile from './components/pages/Profile';
 import Search from './components/pages/Search';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
   const dispacth = useDispatch()
@@ -27,7 +27,6 @@ function App() {
       }
     })
   }, [])
-
 
   return (
     <div id='app'> 
