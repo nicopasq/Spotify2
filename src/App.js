@@ -1,5 +1,5 @@
 import './App.css';
-import { Route, Routes, useNavigate } from 'react-router';
+import { Route, Routes, useLocation, useNavigate } from 'react-router';
 import Layout from './Layout';
 import Login from './components/pages/Login';
 import Profile from './components/pages/Profile';
@@ -10,6 +10,8 @@ import { useDispatch } from 'react-redux';
 function App() {
   const dispath = useDispatch()
   const navigate = useNavigate()
+  const location = useLocation()
+
 
   useEffect(() => {
     fetch('http://localhost:3001')
@@ -17,7 +19,9 @@ function App() {
       if (r.ok){
         r.json().then(data => {
           if (data.access_token){
-            navigate('/profile')
+            if (location.pathname === '/'){
+              navigate('/profile')
+            }
             dispath({type:'tokenData/setTokenData', payload: data})
           } 
         })
