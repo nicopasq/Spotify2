@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router';
 import Layout from './Layout';
@@ -11,7 +10,11 @@ function App() {
 
   useEffect(() => {
     fetch('http://localhost:3001')
-    .then(r => console.log(r))
+    .then(r => {
+      if (r.ok){
+        r.json().then(data => console.log(data))
+      }
+    })
   }, [])
 
   return (

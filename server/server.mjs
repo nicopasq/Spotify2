@@ -20,8 +20,10 @@ app.use(session({
 }))
 
 app.get('/', (req, res) => {
-    if (session.tokenData ){
+    if (session.id){
         res.send(session.tokenData)
+    } else {
+        res.send({message: "User not logged in"})
     }
 })
 
