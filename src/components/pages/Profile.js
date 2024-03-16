@@ -4,6 +4,7 @@ import Layout from "../../Layout";
 
 export default function Profile(){
     const tokenData = useSelector(state => state.tokenData.value)
+    // const tokenData = {...token}
 
     const [profileData, setProfileData] = useState({
         display_name:'',
@@ -14,20 +15,19 @@ export default function Profile(){
         product:''
     })
 
-    useEffect(() => {
-        const {access_token} = tokenData 
-        if (access_token){
-            fetch('https://api.spotify.com/v1/me', {
-                method:"GET",
-                headers:{
-                    Authorization:`Bearer ${access_token}`
-                }
-            })
-            .then(r => r.json())
-            .then(data => setProfileData(data))
-        }
-    }, [])
-console.log(tokenData)
+
+    if (tokenData?.access_token){
+        const {access_token} = tokenData
+        fetch('https://api.spotify.com/v1/me', {
+            method:"GET",
+            headers:{
+                Authorization:`Bearer ${access_token}`
+            }
+        })
+        .then(r => r.json())
+        .then(data => setProfileData(data))
+    }
+    
     const profileComponent = (
         <div>
         <h2>{profileData.display_name} | Followers: {profileData.followers.total}</h2>

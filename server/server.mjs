@@ -31,7 +31,7 @@ app.get('/login', (req, res) => {
     const scope = 'user-read-private user-read-email'
 
     res.redirect(`https://accounts.spotify.com/authorize?client_id=${client_id}&redirect_uri=http://localhost:3000&response_type=code&scope=${scope}&state=${state}`)
-})
+}) 
 
 app.post('/callback', async(req, res) => {
     const code = req.body.code|| null;
