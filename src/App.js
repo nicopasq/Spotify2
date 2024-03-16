@@ -12,7 +12,6 @@ function App() {
   const navigate = useNavigate()
   const location = useLocation()
 
-
   useEffect(() => {
     fetch('http://localhost:3001')
     .then(r => {
