@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 function App() {
-  const dispath = useDispatch()
+  const dispacth = useDispatch()
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -21,7 +21,7 @@ function App() {
             if (location.pathname === '/'){
               navigate('/profile')
             }
-            dispath({type:'tokenData/setTokenData', payload: data})
+            dispacth({type:'tokenData/setTokenData', payload: data})
           } 
         })
       }
