@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import './login.css'
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 export default function Login(){
     const params = new URLSearchParams(window.location.search)
     const code = params.get('code') || undefined
-    const [display, setDisplay] = useState({display:'block'})
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -22,14 +21,14 @@ export default function Login(){
         .then(r => r.json())
         .then(data => {
             if (data.access_token){
-                navigate('/profile')
                 dispatch({type:'tokenData/setTokenData', payload:data})
+                navigate('/profile')
             }
         })
     }
 
     return (
-        <div id="loginPage" style={display}>
+        <div id="loginPage">
             <Button id="loginBtn" href="http://localhost:3001/login">
                 Login to Spotify
             </Button>

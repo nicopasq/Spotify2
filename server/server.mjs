@@ -14,7 +14,7 @@ const state = Randomstring.generate(16)
 app.use(cors())
 app.use(express.json())
 app.use(session({
-    secret:'secret',
+    secret:Randomstring.generate(10),
     id:'',
     tokenData:{},
 }))
@@ -50,7 +50,7 @@ app.post('/callback', async(req, res) => {
     const data = await response.json()
     
     if (data.access_token){
-        session.id = state
+        session.id = Randomstring.generate(10)
         session.tokenData = data
        res.send(data)
     } 
