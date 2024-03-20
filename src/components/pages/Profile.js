@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 export default function Profile() {
   const tokenData = useSelector((state) => state.tokenData.value);
   const navigate = useNavigate()
-  
+
   const [profileData, setProfileData] = useState({
     display_name: "",
     followers: "",
@@ -49,7 +49,7 @@ export default function Profile() {
 
   const noProfile = (
     <div>
-      <h1>Loading Profile...</h1>
+      <h1>Loading....</h1>
     </div>
   )
 
@@ -58,7 +58,7 @@ export default function Profile() {
   if (render === noProfile){
     setTimeout(() => {
       navigate('/')
-    }, 3000)
+    }, 3500)
   }
 
   return <Layout component={render} />;
