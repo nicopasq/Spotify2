@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Layout from "../../Layout";
+import { useNavigate } from "react-router";
 
 export default function Profile() {
   const tokenData = useSelector((state) => state.tokenData.value);
-
+  const navigate = useNavigate()
+  
   const [profileData, setProfileData] = useState({
     display_name: "",
     followers: "",
@@ -45,5 +47,19 @@ export default function Profile() {
     </div>
   );
 
-  return <Layout component={profileComponent} />;
+  const noProfile = (
+    <div>
+      <h1>Loading Profile...</h1>
+    </div>
+  )
+
+  const render = tokenData ? profileComponent : noProfile
+
+  if (render === noProfile){
+    setTimeout(() => {
+      navigate('/')
+    }, 3000)
+  }
+
+  return <Layout component={render} />;
 }

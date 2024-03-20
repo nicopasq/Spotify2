@@ -1,0 +1,13 @@
+#searchInput{
+    background-color: rgb(42, 42, 42);
+    color: white;
+    border-color: transparent;
+    border-radius: 50px;
+    width: 25%;
+    height: 4vh;
+    text-indent: 4%;
+    position: relative;
+    top: 1vh;
+    left: 1vw;
+    outline: 1px solid white;
+}
