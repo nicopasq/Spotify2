@@ -9,7 +9,9 @@ export default function Profile() {
 
   const [profileData, setProfileData] = useState({
     display_name: "",
-    followers: "",
+    followers:{
+      total:0
+    },
     email: "",
     country: "",
     external_urls: "",

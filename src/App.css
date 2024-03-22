@@ -34,6 +34,8 @@ body, html{
   position: absolute;
   top: 1.75%;
   left: 19.35%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 #playbackController{
   background-color: black;
@@ -41,7 +43,7 @@ body, html{
   width: 100vw;
   height: 8.75vh;
   position: absolute;
-  bottom: 0%
+  bottom: -1%
 }
 .linkNavButton{
   color: white;

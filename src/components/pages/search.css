@@ -11,3 +11,11 @@
     left: 1vw;
     outline: 1px solid white;
 }
+.searchResContainer{
+    border: 1px solid pink;
+    height: 22vh;
+    width: 100%;
+    margin-top: 2%;
+    position: relative;
+    top: 5.5vh;
+}
